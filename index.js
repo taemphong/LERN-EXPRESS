@@ -2,14 +2,12 @@ const express = require('express');
 const path = require('path')
 const app = express();
 const users = require('./Users.js');
+const logger = require('./middleware/logger.js');
 
-const logger = (req, res, next) => {
-    console.log('Hello!');
-    next();
-}
+
 
 //init middleware
-app.use(logger); 
+//app.use(logger); 
 
 //get all users
 app.get('/api/users', (req, res) => {
